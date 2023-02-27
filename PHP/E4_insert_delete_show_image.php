@@ -122,12 +122,6 @@ function change(event)
 		background-color: red;
 		color: white;
 		cursor: pointer;
-		justify-content: center;
-	}
-	#b{
-		width: 30%;
-		margin-left: 360px;
-
 	}
 </style>
 </head>
@@ -156,7 +150,7 @@ function change(event)
 		</tr>
 		<tr >
 			<th><button name="insert">Insert</button></th>
-			<!-- <th><button name="select">Show</button></th> -->
+			<th><button name="select">Show</button></th>
 			<th><button name="delete">Delete</button></th>
 		</tr>
 		<tr>
@@ -167,9 +161,6 @@ function change(event)
 		</tr>
 		
 </table>
-</form>
-<form method="post">
-	<button id ="b" name="select">Show</button>
 </form>
 </body>
 </html>

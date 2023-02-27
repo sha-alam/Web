@@ -53,6 +53,7 @@ button[type="submit"]:hover {
 </head>
 <body>
 	<h1>Registration Page</h1>
+	<div>
 	<form id="registrationForm">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" required>
@@ -68,9 +69,10 @@ button[type="submit"]:hover {
 		<input type="radio" id="female" name="gender" value="female" required>
 		<label for="female">Female</label>
 		<button type="submit">Submit</button>
-		<p id="para"></p>
+		
 	</form>
-	
+	<p id="para"></p>
+	</div>
 	<script>
 		const form = document.getElementById("registrationForm");
 		var nameField = document.getElementById("name");
