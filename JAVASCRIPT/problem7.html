@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+	<meta charset="UTF-8">
+	<style>
+		/* Apply styles to the form element */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Apply styles to form labels */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Apply styles to form inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Apply styles to radio buttons */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Apply styles to the submit button */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+	</style>
+</head>
+<body>
+	<h1>Registration Page</h1>
+	<form id="registrationForm">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required>
+		<label for="email">E-mail:</label>
+		<input type="email" id="email" name="email" required>
+		<label for="phone">Phone Number:</label>
+		<input type="tel" id="phone" name="phone" required>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+		<label for="gender">Gender:</label>
+		<input type="radio" id="male" name="gender" value="male" required>
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="female" required>
+		<label for="female">Female</label>
+		<button type="submit">Submit</button>
+		<p id="para"></p>
+	</form>
+	
+	<script>
+		const form = document.getElementById("registrationForm");
+		var nameField = document.getElementById("name");
+		const emailField = document.getElementById("email");
+		const phoneField = document.getElementById("phone");
+		const passwordField = document.getElementById("password");
+
+		form.addEventListener("submit", (event) => {
+			if (!validateName()) {
+				event.preventDefault();
+			}
+
+			if (!validateEmail()) {
+				event.preventDefault();
+			}
+
+			if (!validatePhone()) {
+				event.preventDefault();
+			}
+
+			if (!validatePassword()) {
+				event.preventDefault();
+			}
+		});
+
+		function validateName() {
+			const nameRegex = /^[a-zA-Z]+$/;
+			if (!nameRegex.test(nameField.value) || nameField.value.length < 6) {
+				alert("Name should contain only alphabets and be at least 6 characters long.");
+				nameField.focus();
+				return false;
+			}
+			return true;
+		}
+
+		function validateEmail() {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(emailField.value)) {
+				alert("Invalid email address.");
+				emailField.focus();
+				return false;
+			}
+			return true;
+		}
+
+		function validatePhone() {
+			const phoneRegex = /^\d{10}$/;
+			if (!phoneRegex.test(phoneField.value)) {
+				alert("Phone number should contain 10 digits only.");
+				phoneField.focus();
+				return false;
+			}
+			return true;
+		}
+
+		function validatePassword() {
+			if (passwordField.value.length < 6) {
+				alert("Password should be at least 6 characters long.");
+				passwordField.focus();
+				return false;
+			}
+			return true;
+		}
+		document.getElementById('para').innerHTML = "Name: "+ nameField;
+	</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Division and Multiplication</title>
+    <style type="text/css">
+      body {
+  font-family: Arial, sans-serif;
+  background-color: powderblue;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+button[type="button"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button[type="button"]:hover {
+  background-color: #555;
+}
+
+#result-add,
+#result-multiply {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Division and Multiplication</h1>
+    <form>
+      <label for="num1">Number 1:</label>
+      <input type="number" id="num1" name="num1"><br>
+
+      <label for="num2">Number 2:</label>
+      <input type="number" id="num2" name="num2"><br>
+
+      <button type="button" onclick="calculate()">Calculate</button><br>
+
+      <label for="result-division">Division Result:</label>
+      <input type="text" id="result-division" name="result-devision readonly><br>
+
+      <label for="result-multiply">Multiplication Result:</label>
+      <input type="text" id="result-multiply" name="result-multiply" readonly>
+    </form>
+
+    <script>
+      function calculate() {
+        // Get the values of the input fields
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+
+        // Calculate the division and multiplication
+        var division = num1 / num2;
+        var multiplication = num1 * num2;
+
+        // Set the result field values
+        document.getElementById("result-division").value =division;
+        document.getElementById("result-multiply").value = multiplication;
+      }
+    </script>
+  </body>
+</html>
