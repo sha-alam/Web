@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+    
+    	<input type = "name" placeholder='firstname' id = 'n'>
+    	<button onclick = 'vali()'>Submit</button>
+
+   
+    <p id = "para"></p>
+    <script>
+    	function vali(){
+    		var name = document.getElementById('n').value;
+    		if (name.length<6||name.length==0){
+    			alert("Name is too short")
+    		}
+    		document.getElementById('para').innerHTML = "Name "+name;
+    	}
+    </script>
+</body>
+</html>
